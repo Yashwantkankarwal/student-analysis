@@ -1,0 +1,36 @@
+STUDENT PERFORMANCE — ML EXPERIMENT RESULTS SUMMARY
+======================================================================
+
+Input file  : Student_Performance_ML_Ready.csv
+Split       : 80/20 stratified (random_state=42)
+Imbalance   : handled via class_weight="balanced" (sample_weight for GB)
+Classes     : F=0  E=1  D=2  C=3  B=4  A=5
+
+
+Experiment A (overall_score)
+-------------------------------------------------------
+Model                     Acc  Prec(w)  Rec(w)  MacroF1   WtdF1
+-------------------------------------------------------
+Logistic Regression    0.9503   0.9511  0.9503   0.9524  0.9503
+Decision Tree          0.9960   0.9960  0.9960   0.9957  0.9960
+Random Forest          0.9967   0.9967  0.9967   0.9963  0.9967
+Gradient Boosting      0.9957   0.9957  0.9957   0.9955  0.9957
+
+Experiment B (subject scores)
+-------------------------------------------------------
+Model                     Acc  Prec(w)  Rec(w)  MacroF1   WtdF1
+-------------------------------------------------------
+Logistic Regression    0.7520   0.7592  0.7520   0.7459  0.7527
+Decision Tree          0.6527   0.6539  0.6527   0.6408  0.6530
+Random Forest          0.7553   0.7597  0.7553   0.7513  0.7561
+Gradient Boosting      0.7567   0.7595  0.7567   0.7476  0.7575
+
+
+HEAD-TO-HEAD COMPARISON (Macro F1)
+=======================================================
+Model                     Exp A    Exp B   Winner
+-------------------------------------------------------
+Logistic Regression      0.9524   0.7459        A
+Decision Tree            0.9957   0.6408        A
+Random Forest            0.9963   0.7513        A
+Gradient Boosting        0.9955   0.7476        A

@@ -1,0 +1,59 @@
+FINAL GRADIENT BOOSTING MODEL
+=============================
+
+Model: Gradient Boosting
+
+Hyperparameters:
+learning_rate = 0.05
+max_depth = 3
+n_estimators = 200
+subsample = 0.8
+random_state = 42
+
+Features:
+- age
+- study_hours
+- attendance_percentage
+- math_score
+- science_score
+- english_score
+- overall_score
+- internet_access
+- extra_activities
+- travel_time
+- parent_education
+- gender_female
+- gender_male
+- school_type_private
+- study_method_coaching
+- study_method_group_study
+- study_method_mixed
+- study_method_notes
+- study_method_online_videos
+
+Accuracy  : 0.9963
+Precision : 0.9963
+Recall    : 0.9963
+Macro F1  : 0.9956
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       359
+           1       1.00      1.00      1.00       676
+           2       1.00      1.00      1.00       754
+           3       1.00      0.99      1.00       739
+           4       0.99      0.99      0.99       328
+           5       0.99      0.99      0.99       144
+
+    accuracy                           1.00      3000
+   macro avg       1.00      1.00      1.00      3000
+weighted avg       1.00      1.00      1.00      3000
+
+Confusion Matrix:
+[[359   0   0   0   0   0]
+ [  1 674   1   0   0   0]
+ [  0   0 753   1   0   0]
+ [  0   0   2 735   2   0]
+ [  0   0   0   2 325   1]
+ [  0   0   0   0   1 143]]

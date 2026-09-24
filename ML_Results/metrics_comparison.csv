@@ -1,0 +1,9 @@
+experiment,model,accuracy,precision_w,recall_w,macro_f1,weighted_f1
+A,Logistic Regression,0.9503,0.9511,0.9503,0.9524,0.9503
+A,Decision Tree,0.996,0.996,0.996,0.9957,0.996
+A,Random Forest,0.9967,0.9967,0.9967,0.9963,0.9967
+A,Gradient Boosting,0.9957,0.9957,0.9957,0.9955,0.9957
+B,Logistic Regression,0.752,0.7592,0.752,0.7459,0.7527
+B,Decision Tree,0.6527,0.6539,0.6527,0.6408,0.653
+B,Random Forest,0.7553,0.7597,0.7553,0.7513,0.7561
+B,Gradient Boosting,0.7567,0.7595,0.7567,0.7476,0.7575

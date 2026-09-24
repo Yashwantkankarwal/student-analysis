@@ -1,0 +1,54 @@
+EXPERIMENT B -- HYPERPARAMETER TUNING SUMMARY
+====================================================================
+Input file   : Student_Performance_ML_Ready.csv
+Feature set  : Experiment B  (18 features)
+Target       : final_grade_encoded  (F=0 E=1 D=2 C=3 B=4 A=5)
+CV strategy  : StratifiedKFold  n_splits=5  shuffle=True  random_state=42
+Primary metric for selection: macro-F1
+Imbalance    : class_weight="balanced" / sample_weight (GB)
+
+────────────────────────────────────────────────────────────────────
+Model        : Logistic Regression
+Grid size    : 15 combinations  (75 fits)
+Best params  : {'lr__C': 10.0, 'lr__max_iter': 500}
+CV Accuracy  : 0.7549  +/- 0.0052
+CV Macro-F1  : 0.7470  +/- 0.0038
+Folds        : 5
+Time         : 8.4s
+
+────────────────────────────────────────────────────────────────────
+Model        : Decision Tree
+Grid size    : 90 combinations  (450 fits)
+Best params  : {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2}
+CV Accuracy  : 0.6963  +/- 0.0090
+CV Macro-F1  : 0.6894  +/- 0.0104
+Folds        : 5
+Time         : 8.8s
+
+────────────────────────────────────────────────────────────────────
+Model        : Random Forest
+Grid size    : 72 combinations  (360 fits)
+Best params  : {'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+CV Accuracy  : 0.7599  +/- 0.0053
+CV Macro-F1  : 0.7515  +/- 0.0050
+Folds        : 5
+Time         : 215.2s
+
+────────────────────────────────────────────────────────────────────
+Model        : Gradient Boosting
+Grid size    : 36 combinations  (180 fits)
+Best params  : {'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 200, 'subsample': 0.8}
+CV Accuracy  : 0.7637  +/- 0.0045
+CV Macro-F1  : 0.7644  +/- 0.0042
+Folds        : 5
+Time         : 906.9s
+
+====================================================================
+RANKED BY CV MACRO-F1 (best first)
+--------------------------------------------------------------------
+Rank  Model                   Acc Mean  Acc Std  F1 Mean   F1 Std
+--------------------------------------------------------------------
+1     Gradient Boosting         0.7637   0.0045   0.7644   0.0042
+2     Random Forest             0.7599   0.0053   0.7515   0.0050
+3     Logistic Regression       0.7549   0.0052   0.7470   0.0038
+4     Decision Tree             0.6963   0.0090   0.6894   0.0104

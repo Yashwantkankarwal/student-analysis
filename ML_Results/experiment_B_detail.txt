@@ -1,0 +1,177 @@
+============================================================
+Experiment B (subject scores)
+Features (18): age, study_hours, attendance_percentage, internet_access, extra_activities, travel_time, parent_education, gender_female, gender_male, school_type_private, study_method_coaching, study_method_group_study, study_method_mixed, study_method_notes, study_method_online_videos, math_score, science_score, english_score
+Train samples: 12000  |  Test samples: 3000
+============================================================
+
+--- Logistic Regression ---
+Accuracy        : 0.7520
+Precision (w)   : 0.7592
+Recall    (w)   : 0.7520
+Macro F1        : 0.7459
+Weighted F1     : 0.7527
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           F       0.75      0.87      0.81       359
+           E       0.78      0.71      0.74       676
+           D       0.77      0.77      0.77       754
+           C       0.82      0.71      0.76       739
+           B       0.59      0.71      0.65       328
+           A       0.66      0.85      0.74       144
+
+    accuracy                           0.75      3000
+   macro avg       0.73      0.77      0.75      3000
+weighted avg       0.76      0.75      0.75      3000
+
+Confusion Matrix (rows=Actual, cols=Predicted):
+       F    E    D    C    B    A  <- Predicted
+  F |313   46    0    0    0    0
+  E |102  477   97    0    0    0
+  D |  0   88  584   82    0    0
+  C |  0    0   73  528  136    2
+  B |  0    0    0   35  232   61
+  A |  0    0    0    0   22  122
+
+
+Top-10 Feature Importances (mean |coef|):
+  study_hours                         5.0551  #####################################################################################################
+  math_score                          2.2505  #############################################
+  science_score                       2.2195  ############################################
+  english_score                       2.1264  ##########################################
+  attendance_percentage               1.6151  ################################
+  internet_access                     0.0744  #
+  study_method_notes                  0.0645  #
+  travel_time                         0.0610  #
+  study_method_coaching               0.0525  #
+  study_method_online_videos          0.0432  
+
+--- Decision Tree ---
+Accuracy        : 0.6527
+Precision (w)   : 0.6539
+Recall    (w)   : 0.6527
+Macro F1        : 0.6408
+Weighted F1     : 0.6530
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           F       0.68      0.71      0.69       359
+           E       0.64      0.63      0.64       676
+           D       0.67      0.68      0.68       754
+           C       0.70      0.67      0.68       739
+           B       0.51      0.54      0.53       328
+           A       0.61      0.64      0.63       144
+
+    accuracy                           0.65      3000
+   macro avg       0.64      0.65      0.64      3000
+weighted avg       0.65      0.65      0.65      3000
+
+Confusion Matrix (rows=Actual, cols=Predicted):
+       F    E    D    C    B    A  <- Predicted
+  F |256  101    2    0    0    0
+  E |122  426  128    0    0    0
+  D |  1  135  515  102    1    0
+  C |  0    0  119  492  123    5
+  B |  0    0    1   97  177   53
+  A |  0    0    0    9   43   92
+
+
+Top-10 Feature Importances:
+  study_hours                         0.2809  ################
+  science_score                       0.2187  #############
+  math_score                          0.1444  ########
+  english_score                       0.1402  ########
+  attendance_percentage               0.1177  #######
+  parent_education                    0.0178  #
+  age                                 0.0161  
+  travel_time                         0.0118  
+  study_method_notes                  0.0066  
+  extra_activities                    0.0064  
+
+--- Random Forest ---
+Accuracy        : 0.7553
+Precision (w)   : 0.7597
+Recall    (w)   : 0.7553
+Macro F1        : 0.7513
+Weighted F1     : 0.7561
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           F       0.78      0.83      0.81       359
+           E       0.77      0.74      0.75       676
+           D       0.76      0.77      0.77       754
+           C       0.80      0.73      0.76       739
+           B       0.62      0.75      0.68       328
+           A       0.80      0.69      0.74       144
+
+    accuracy                           0.76      3000
+   macro avg       0.75      0.75      0.75      3000
+weighted avg       0.76      0.76      0.76      3000
+
+Confusion Matrix (rows=Actual, cols=Predicted):
+       F    E    D    C    B    A  <- Predicted
+  F |298   61    0    0    0    0
+  E | 82  497   97    0    0    0
+  D |  0   91  581   82    0    0
+  C |  0    0   86  543  110    0
+  B |  0    0    0   56  247   25
+  A |  0    0    0    0   44  100
+
+
+Top-10 Feature Importances:
+  study_hours                         0.2171  #############
+  english_score                       0.1765  ##########
+  science_score                       0.1759  ##########
+  math_score                          0.1738  ##########
+  attendance_percentage               0.1001  ######
+  age                                 0.0280  #
+  parent_education                    0.0273  #
+  travel_time                         0.0214  #
+  school_type_private                 0.0104  
+  extra_activities                    0.0102  
+
+--- Gradient Boosting ---
+Accuracy        : 0.7567
+Precision (w)   : 0.7595
+Recall    (w)   : 0.7567
+Macro F1        : 0.7476
+Weighted F1     : 0.7575
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           F       0.79      0.83      0.81       359
+           E       0.76      0.75      0.76       676
+           D       0.77      0.77      0.77       754
+           C       0.80      0.75      0.77       739
+           B       0.61      0.70      0.65       328
+           A       0.72      0.73      0.73       144
+
+    accuracy                           0.76      3000
+   macro avg       0.74      0.75      0.75      3000
+weighted avg       0.76      0.76      0.76      3000
+
+Confusion Matrix (rows=Actual, cols=Predicted):
+       F    E    D    C    B    A  <- Predicted
+  F |297   62    0    0    0    0
+  E | 79  506   91    0    0    0
+  D |  0   96  580   78    0    0
+  C |  0    0   78  554  107    0
+  B |  0    0    0   60  228   40
+  A |  0    0    0    0   39  105
+
+
+Top-10 Feature Importances:
+  study_hours                         0.3209  ###################
+  english_score                       0.2027  ############
+  science_score                       0.1865  ###########
+  math_score                          0.1514  #########
+  attendance_percentage               0.0998  #####
+  age                                 0.0077  
+  parent_education                    0.0074  
+  travel_time                         0.0055  
+  study_method_group_study            0.0021  
+  gender_female                       0.0020  
