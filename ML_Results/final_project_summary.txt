@@ -1,0 +1,44 @@
+
+FINAL STUDENT PERFORMANCE MODEL SUMMARY
+=======================================
+
+Final Model:
+Tuned Random Forest
+
+Target:
+Student performance category
+
+Important leakage decision:
+overall_score was excluded from the final feature set.
+
+Final Test Results:
+Accuracy          : 0.9117
+Macro Precision   : 0.9225
+Macro Recall      : 0.9043
+Macro F1          : 0.9127
+
+Test Samples:
+3000
+
+Final Model Parameters:
+{'max_depth': 15, 'max_features': 'sqrt', 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+
+Best Cross-Validation Macro F1:
+0.7445
+
+Model Verification:
+The saved Random Forest model was loaded from disk and
+successfully reproduced the original test predictions.
+
+Loaded Model Accuracy:
+0.9117
+
+Loaded Model Macro F1:
+0.9127
+
+Major Features by Random Forest Importance:
+study_hours
+science_score
+english_score
+math_score
+attendance_percentage

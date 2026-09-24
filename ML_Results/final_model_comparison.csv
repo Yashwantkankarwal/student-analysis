@@ -1,0 +1,4 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1
+Logistic Regression,0.6717,0.6452,0.6068,0.6201
+Random Forest,0.7623,0.7683,0.7391,0.7518
+Final Tuned Random Forest,0.9117,0.9225,0.9043,0.9127
