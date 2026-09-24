@@ -2,12 +2,25 @@
 
 ## Overview
 
-This project analyzes student performance data using exploratory data
-analysis, feature engineering, machine learning, cross-validation, and
-hyperparameter tuning.
+This project analyzes student performance data using exploratory data analysis (EDA), data cleaning, feature engineering, machine learning, cross-validation, and hyperparameter tuning.
 
-The goal is to develop a machine learning model capable of predicting
-student final-grade categories from academic and demographic features.
+The main objective is to build a machine learning model that predicts student final-grade categories using academic, attendance, demographic, and study-related features.
+
+---
+
+## Project Objectives
+
+- Understand the structure and quality of the student performance dataset
+- Clean and prepare the data for machine learning
+- Perform exploratory data analysis
+- Engineer useful machine learning features
+- Investigate potential target leakage
+- Compare multiple classification models
+- Evaluate models using multiple performance metrics
+- Perform k-fold cross-validation
+- Tune the final model's hyperparameters
+- Analyze feature importance
+- Save the final trained model and results
 
 ---
 
@@ -19,124 +32,75 @@ The project follows this workflow:
 2. Data cleaning
 3. Exploratory Data Analysis (EDA)
 4. Feature engineering
-5. Machine learning experiments
-6. Model comparison
-7. Cross-validation
-8. Hyperparameter tuning
-9. Final model training
-10. Final findings report
+5. Target leakage investigation
+6. Machine learning experiments
+7. Model comparison
+8. K-fold cross-validation
+9. Hyperparameter tuning
+10. Final model training
+11. Feature importance analysis
+12. Final results and reporting
 
 ---
 
-## Machine Learning Models
+## Dataset
 
-The following classification models were evaluated:
+The project uses student performance data containing academic, demographic, attendance, and study-related variables.
+
+Important features include:
+
+- Study hours
+- Mathematics score
+- Science score
+- English score
+- Attendance percentage
+- Age
+- Parent education
+- Travel time
+- Extra activities
+- Internet access
+- Study method
+- Gender
+- School type
+
+The project contains cleaned and machine-learning-ready versions of the dataset.
+
+---
+
+## Machine Learning
+
+Several classification approaches were investigated during the project, including:
 
 - Logistic Regression
-- Decision Tree
 - Random Forest
 - Gradient Boosting
 
+Model performance was evaluated using:
+
+- Accuracy
+- Macro Precision
+- Macro Recall
+- Macro F1-score
+
 ---
 
-## Experiments
+## Model Comparison
 
-### Experiment A
+The final model comparison produced the following results:
 
-Experiment A includes `overall_score` as a feature.
-
-This experiment produces very high performance because the overall
-score is closely related to the final grade.
-
-### Experiment B
-
-Experiment B uses subject-level scores and other available features
-without relying on `overall_score`.
-
-This provides a more realistic assessment of prediction performance.
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 0.6717 | 0.6452 | 0.6068 | 0.6201 |
+| Random Forest | 0.7623 | 0.7683 | 0.7391 | 0.7518 |
+| Final Tuned Random Forest | 0.9117 | 0.9225 | 0.9043 | 0.9127 |
 
 ---
 
 ## Final Model
 
-The final model is a tuned Gradient Boosting classifier.
+The final selected model is a **tuned Random Forest classifier**.
 
-Hyperparameters:
+The trained model is saved in:
 
-- `learning_rate = 0.05`
-- `max_depth = 3`
-- `n_estimators = 200`
-- `subsample = 0.8`
-- `random_state = 42`
-
----
-
-## Final Performance
-
-For Experiment B, the tuned Gradient Boosting model achieved
-approximately:
-
-- Accuracy: 76.37%
-- Macro F1: 76.44%
-
-Five-fold cross-validation produced:
-
-- Mean Macro F1: 76.44%
-- Standard deviation: 0.42 percentage points
-
----
-
-## Project Outputs
-
-### EDA Charts
-
-The `EDA_Charts` directory contains visualizations including:
-
-- Parent education vs overall score
-- Study hours vs overall score
-- Attendance vs overall score
-- Correlation matrix
-- Grade by study method
-- Overall score by study method
-
-### Machine Learning Results
-
-The `ML_Results` directory contains:
-
-- Model comparison results
-- Cross-validation results
-- Hyperparameter tuning results
-- Feature importance results
-- Final model results
-- Complete findings report
-
----
-
-## Final Model File
-
-The trained model is saved as:
-
-`final_gradient_boosting_model.joblib`
-
----
-
-## Technologies
-
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Machine Learning
-- Exploratory Data Analysis
-
----
-
-## Conclusion
-
-The project compares multiple classification approaches and evaluates
-their performance using accuracy, precision, recall, F1-score,
-cross-validation, and hyperparameter tuning.
-
-The final analysis provides a reproducible machine learning workflow
-for student performance classification.
+```text
+ML_Results/final_tuned_random_forest.joblib
